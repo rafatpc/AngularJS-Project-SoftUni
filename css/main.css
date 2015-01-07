@@ -22,7 +22,6 @@ body {
     font-weight: normal;
     margin: 5px 5px 0 0;
     font-size: 11pt;
-    float: right;
 }
 
 #app-header .user-area span {
@@ -48,20 +47,6 @@ body {
     margin: 15px 0;
     padding: 10px;
     width: 100%;
-}
-
-.box h1 {
-    margin: 0 0 10px 0;
-    font-weight: bold;
-    font-size: 18pt;
-    color: black;
-}
-
-.box h2 {
-    margin: 0 0 10px 0;
-    font-weight: bold;
-    font-size: 16pt;
-    color: black;
 }
 
 ul.sidebar-menu {
@@ -106,4 +91,36 @@ ul.sidebar-menu li a, ul.sidebar-menu li a:focus {
 .link:hover {
     text-decoration: none;
     color: #29619d;
+}
+
+.ad-image {
+    max-width: 150px;
+}
+
+h1, h2, h3 {
+    margin: 0 0 10px 0 !important;
+}
+
+.dot-box {
+    background-color: #c3ffab;
+    border: 1px dotted #000;
+    padding: 10px;
+}
+
+.box label {
+    font-size: 15px;
+    padding: 10px 0;
+}
+
+.ad-info-holder {
+    padding: 0;
+}
+
+.ad-info-holder > p { 
+    margin: 0 15px;
+}
+
+.ad-info-holder > p,
+.ad-info-holder > div {
+    margin-bottom: 7px;
 }
