@@ -2,7 +2,9 @@
 
 app.factory('adsService', ['$resource', 'baseServiceUrl', function($resource, baseServiceUrl) {
         var adsResource = $resource(baseServiceUrl + 'ads', null, {
-            'getAll': {method: 'GET'}
+            'getAll': {
+                method: 'GET'
+            }
         });
 
         return {

@@ -11,6 +11,13 @@ app.config(['$routeProvider', function($routeProvider) {
             controller: 'HomeController'
         });
 
-        $routeProvider.otherwise({redirectTo: '/'});
+        $routeProvider.when('/login', {
+            templateUrl: 'templates/login.html',
+            controller: 'BlankController'
+        });
+
+        $routeProvider.otherwise({
+            redirectTo: '/'
+        });
     }
 ]);
