@@ -18,9 +18,14 @@ app.factory('authenticationService', function() {
         return headers;
     }
 
+    function removeUser() {
+        localStorage.removeItem('user');
+    }
+
     return {
         saveUser: saveUserData,
         getUser: getUserData,
-        getHeaders: getHeaders
+        getHeaders: getHeaders,
+        removeUser: removeUser
     };
 });

@@ -3,8 +3,8 @@
     <head>
         <title>AngularJS App</title>
         <link href='http://fonts.googleapis.com/css?family=Roboto:400,100,300,100italic,300italic,400italic,500,500italic' rel='stylesheet' type='text/css' />
+        <link rel="stylesheet" type="text/css" href="/css/main.css" />
         <link rel="stylesheet" type="text/css" href="/css/bootstrap.css" />
-        <link rel="stylesheet" type="text/css" href="/css/main.css">
     </head>
     <body>
         <div class="container">
@@ -15,10 +15,7 @@
                 <div class='col-md-3 sidebar'>
                     <div ng-include="'/templates/main/left-sidebar.html'"></div>
                 </div>
-                <div id='main-content' class='col-md-6' ng-view></div>
-                <div class='col-md-3 sidebar'>
-                    <div ng-include="'/templates/main/right-sidebar.html'"></div>
-                </div>
+                <div id='main-content' class='col-md-9' ng-view></div>
             </div>
             <footer id="app-footer">
                 &copy; 2014 by Software University Foundation, No Rights Reserved

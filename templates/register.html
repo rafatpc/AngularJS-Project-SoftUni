@@ -1,0 +1,45 @@
+<div id='register-box' class="box col-xs-12">
+    <h2>Register</h2>
+    <div class="col-xs-6">
+        <label for="username">Username:</label>
+        <input class="form-control" type="text" id="username" placeholder="Username" ng-model="user.username" required />
+    </div>
+    <div class="clearfix"></div>
+    <div class="col-md-6">
+        <div class="form-group">
+            <label for="password">Password:</label>
+            <input class="form-control" type="password" id="password" placeholder="Password" ng-model="user.password" required />
+        </div>
+        <div class="form-group">
+            <label for="name">Name:</label>
+            <input class="form-control" type="text" id="name" placeholder="Name" ng-model="user.name" required />
+        </div>
+        <div class="form-group">
+            <label for="phone">Phone:</label>
+            <input class="form-control" type="text" id="phone" placeholder="Phone" ng-model="user.phone" required />
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="form-group">
+            <label for="passwordConfirmation">Confirm Password:</label>
+            <input class="form-control" type="password" id="passwordConfirmation" placeholder="Confirm Password" ng-model="user.confirmPassword" required />
+        </div>
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input class="form-control" type="text" id="email" placeholder="Email" ng-model="user.email" required />
+        </div>
+        <div class="form-group">
+            <label for="town">Town:</label>
+            <select class="form-control" id="town">
+                <option value="null">(None)</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="col-xs-6">
+        <button type="submit" class="btn btn-success" ng-click="register(user)">Register</button>
+    </div>
+    <div class="col-xs-6 text-right">
+        <a href="#/login">Login</a>
+    </div>
+</div>

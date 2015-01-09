@@ -1,29 +1,34 @@
-<div ng-repeat="ad in ads.ads" class="col-xs-12 box">
-    <h2 class="col-xs-9">{{ad.title}}</h2> <!-- GO, GO, SEO! :D -->
-    <div class="col-xs-3">{{ad.date| date:'dd-MMM-yyyy'}}</div>
-    <div class="col-xs-4 dot-box" ng-if='ad.imageDataUrl'>
-        <img class="ad-image" ng-src="{{ad.imageDataUrl}}" />
-    </div>
-    <div class="col-xs-4 dot-box" ng-if="!ad.imageDataUrl">
-        <img class="ad-image" ng-src="/images/noimage.png" />
-    </div>
-    <div class="col-xs-8 ad-info-holder">
-        <p class="dot-box">{{ad.text}}</p>
-        <div class="col-xs-12">
-            <label class="col-xs-4 col-md-2 control-label">Name</label>
-            <div class="col-xs-4 col-md-10 dot-box">{{ad.ownerName}}</div>
+<div class="col-md-8">
+    <div ng-repeat="ad in ads.ads" class="col-xs-12 box">
+        <h2 class="col-xs-9">{{ad.title}}</h2> <!-- GO, GO, SEO! :D -->
+        <div class="col-xs-3">{{ad.date| date:'dd-MMM-yyyy'}}</div>
+        <div class="col-xs-4 dot-box" ng-if='ad.imageDataUrl'>
+            <img class="ad-image" ng-src="{{ad.imageDataUrl}}" />
         </div>
-        <div class="col-xs-12">
-            <label class="col-xs-4 col-md-2 control-label">Email</label>
-            <div class="col-xs-4 col-md-10 dot-box">{{ad.ownerEmail}}</div>
+        <div class="col-xs-4 dot-box" ng-if="!ad.imageDataUrl">
+            <img class="ad-image" ng-src="/images/noimage.png" />
         </div>
-        <div class="col-xs-12">
-            <label class="col-xs-4 col-md-2 control-label">Tel.</label>
-            <div class="col-xs-4 col-md-10 dot-box">{{ad.ownerPhone}}</div><br/>
+        <div class="col-xs-8 ad-info-holder">
+            <p class="dot-box">{{ad.text}}</p>
+            <div class="col-xs-12">
+                <label class="col-xs-4 col-md-2 control-label">Name</label>
+                <div class="col-xs-4 col-md-10 dot-box">{{ad.ownerName}}</div>
+            </div>
+            <div class="col-xs-12">
+                <label class="col-xs-4 col-md-2 control-label">Email</label>
+                <div class="col-xs-4 col-md-10 dot-box">{{ad.ownerEmail}}</div>
+            </div>
+            <div class="col-xs-12">
+                <label class="col-xs-4 col-md-2 control-label">Tel.</label>
+                <div class="col-xs-4 col-md-10 dot-box">{{ad.ownerPhone}}</div><br/>
+            </div>
         </div>
     </div>
+    <div ng-if="ads.ads.length == 0" class="box no-data">No ads found.</div>
 </div>
-
+<div class='col-md-4 sidebar last-column'>
+    <div ng-include="'/templates/main/right-sidebar.html'"></div>
+</div>
 <!--
 "id":778,
 "title":"",
@@ -36,5 +41,3 @@
 "categoryId":5,
 "townId":1}
 --->
-
-<div ng-if="ads.ads.length == 0" class="box no-data">No ads found.</div>
