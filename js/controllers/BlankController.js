@@ -1,5 +1,5 @@
 'use strict';
 
-app.controller('BlankController', function($scope, $rootScope) {
+app.controller('BlankController', function($scope) {
     
 });

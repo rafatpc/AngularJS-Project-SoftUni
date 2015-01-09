@@ -1,15 +1,29 @@
-<ul class="ads">
-	<li ng-repeat="ad in ads.ads" class="box">
-		<h1>{{ad.title}}</h1>
-        <div><strong>Date:</strong> {{ad.date | date:'dd-MMM-yyyy'}}</div>
-        <div ng-if='ad.imageDataUrl'>
-            <strong>Image:</strong>
-            <img class="ad-image" ng-src="{{ad.imageDataUrl}}" />
-        </div>
-        // TODO: display all other fields for the current ad
-	</li>
-</ul>
-
-<div ng-if="ads.ads.length==0" class="box no-data">
-    No ads found.
+<div class="col-xs-12">
+    <div id='login-box' class="col-xs-offset-2 col-xs-8">
+        <form class="form-horizontal">
+            <fieldset>
+                <legend>Login</legend>
+                <div class="form-group">
+                    <div class="col-lg-offset-1 col-lg-10">
+                        Username<br />
+                        <input class="form-control" id="inputEmail" placeholder="Username" type="text" ng-model="user.username">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-lg-offset-1 col-lg-10">
+                        Password<br />
+                        <input class="form-control" id="inputPassword" placeholder="Password" type="password" ng-model="user.password">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-lg-3 col-lg-offset-1">
+                        <button type="submit" class="btn btn-success" ng-click="login(user)">Submit</button>
+                    </div>
+                    <div class="col-lg-7 text-right">
+                        <a href="#/register">Register here.</a>
+                    </div>
+                </div>
+            </fieldset>
+        </form>
+    </div>
 </div>
