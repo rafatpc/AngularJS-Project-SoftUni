@@ -1,6 +1,10 @@
-app.controller('RegisterController', ['$scope', 'userService', function($scope, userService) {
-        $scope.login = function(user) {
-            userService.login(user);
+app.controller('RegisterController', ['$scope', 'userService', 'townsService', function($scope, userService, townsService) {
+        townsService.getTowns().$promise.then(function(data) {
+            $scope.towns = data;
+        });
+
+        $scope.register = function(userData) {
+            userService.register(userData);
         };
     }
 ]);

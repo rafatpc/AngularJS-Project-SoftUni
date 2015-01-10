@@ -1,9 +1,11 @@
 'use strict';
 
-app.controller('HomeController', function($scope, $rootScope, adsService, pageSize) {
-    adsService.getAds(null, function(data) {
+app.controller('HomeController', function($scope, $http, $rootScope, adsService, authenticationService, pageSize) {
+    $http.defaults.headers.common['Authorization'] = authenticationService.getHeaders();
+    
+    adsService.getAds().$promise.then(function(data) {
         $scope.ads = data;
     }, function(error) {
-        alert("Unable to load ads");
+        console.log(error);
     });
 });
