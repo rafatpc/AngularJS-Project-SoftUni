@@ -13,7 +13,7 @@
             </header>
             <div id='app-content'>
                 <div class='col-md-3 sidebar'>
-                    <div ng-include="'/templates/main/left-sidebar.html'"></div>
+                    <sidebar></sidebar>
                 </div>
                 <div id='main-content' class='col-md-9' ng-view></div>
             </div>
@@ -37,5 +37,6 @@
         <script type="text/javascript" src="/js/services/adsService.js"></script>
         <script type="text/javascript" src="/js/services/authenticationService.js"></script>
         <script type="text/javascript" src="/js/services/userService.js"></script>
+        <script src="js/directives/sidebar.js" type="text/javascript"></script>
     </body>
 </html>
