@@ -12,7 +12,7 @@ app.config(['$routeProvider', function($routeProvider) {
         });
 
         $routeProvider.when('/user/ads', {
-            templateUrl: '/templates/home.html',
+            templateUrl: '/templates/user/myads.html',
             controller: 'MyAdsController'
         });
 

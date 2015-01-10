@@ -184,3 +184,7 @@ button, input[type="button"], input[type="submit"], .button {
 .fuck-bootstrap {
     margin: 0px -12px 0px 12px !important;
 }
+
+.info-box {
+    height: 43px;
+}
