@@ -143,12 +143,14 @@ h1, h2, h3 {
     background-color: #aad26e;
 }
 
-button, input[type="button"], input[type="submit"], .button {
+button, input[type="button"], input[type="submit"], input[type="reset"], .button {
     display: block !important;
     background-color: #6fac46 !important;
     border: 1px solid #507d31 !important;
     border-radius: 5px !important;
+    width: 150px !important;
     min-width: 100px !important; 
+    max-width: 100% !important;
     padding: 10px 20px !important;
     text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.4);
     font-weight: 500 !important;
@@ -187,4 +189,20 @@ button, input[type="button"], input[type="submit"], .button {
 
 .info-box {
     height: 43px;
+}
+
+.border-right {
+    border-right: 1px solid #507d31;
+}
+
+.border-left {
+    border-left: 1px solid #507d31;
+}
+
+.btn-center {
+    margin: 0px auto;
+}
+
+.little-margin > div {
+    margin-bottom: 10px;
 }

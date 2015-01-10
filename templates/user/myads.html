@@ -1,6 +1,6 @@
 <div class="col-md-12 last-column">
     <div ng-repeat="ad in ads.ads" class="col-xs-12 box">
-        <div class="col-xs-9">
+        <div class="col-xs-9"> <!-- border-right -->
             <h2 class="col-xs-12">{{ad.title}}</h2> <!-- GO, GO, SEO! :D -->
             <div class="col-xs-4 text-center dot-box" ng-if='ad.imageDataUrl'>
                 <img class="ad-image" ng-src="{{ad.imageDataUrl}}" />
@@ -11,22 +11,32 @@
             <div class="col-xs-8 ad-info-holder">
                 <p class="dot-box">{{ad.text}}</p>
                 <div class="col-xs-12">
-                    <label class="col-xs-4 col-md-2 control-label">Category: </label>
-                    <div class="col-xs-4 col-md-10 dot-box info-box">{{ad.categoryName}}</div>
+                    <label class="col-xs-5 col-md-3 control-label">Category: </label>
+                    <div class="col-xs-7 col-md-9 dot-box info-box" ng-if="ad.categoryName">{{ad.categoryName}}</div>
+                    <div class="col-xs-7 col-md-9 dot-box info-box" ng-if="!ad.categoryName">N/A</div>
                 </div>
                 <div class="col-xs-12">
-                    <label class="col-xs-4 col-md-2 control-label">Town:</label>
-                    <div class="col-xs-4 col-md-10 dot-box info-box">{{ad.townName}}</div>
+                    <label class="col-xs-5 col-md-3 control-label">Town:</label>
+                    <div class="col-xs-7 col-md-9 dot-box info-box" ng-if="ad.townName">{{ad.townName}}</div>
+                    <div class="col-xs-7 col-md-9 dot-box info-box" ng-if="!ad.townName">N/A</div>
                 </div>
             </div>
         </div>
-        <div class="col-xs-3 text-center">
+        <div class="col-xs-3 text-center last-column border-left">
             <div class="col-xs-12 text-right">{{ad.date| date:'dd-MMM-yyyy'}}</div>
             <br /><br />
             Status:
             <div class="dot-box info-box">{{ad.status}}</div>
-            <br />
-            <div class="button">Deactivate</div>
+            <div ng-if="ad.status != 'Inactive'">
+                <br />
+                <input type="button" ng-click="deactivate(ad.id)" class="btn btn-success btn-center" value="Deactivate" />
+            </div>
+            <div ng-if="ad.status == 'Inactive'">
+                <br />
+                <input type="button" ng-click="edit(ad.id)" class="btn btn-success btn-center" value="Edit" />
+                <input type="button" ng-click="publishAgain(ad.id)" class="btn btn-success btn-center" value="Publish Again" />
+                <input type="button" ng-click="deleteAd(ad.id)" class="btn btn-success btn-center" value="Delete" />
+            </div>
         </div>
     </div>
     <div ng-if="ads.ads.length == 0" class="box no-data">No ads found.</div>

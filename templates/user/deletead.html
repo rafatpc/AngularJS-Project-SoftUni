@@ -1,0 +1,37 @@
+<div class="col-xs-12">
+    <div id="login-box" class="box col-xs-offset-2 col-xs-8">
+        <h3>Confirm Deleting Ad?</h3>
+        <div class="col-xs-12">
+            <div class="col-md-9"><h4>{{ad.title}}</h4></div>
+            <div class="col-md-3">{{ad.date| date:'dd-MMM-yyyy'}}</div>
+        </div>
+        <div class="col-xs-12">
+            <div class="col-md-4 dot-box">
+                <img src="{{ad.imageDataUrl}}" alt="" />
+            </div>
+            <div class="col-md-8 little-margin">
+                <div class="col-xs-12">
+                    <div class="col-xs-12 dot-box">{{ad.text}}</div>
+                </div>
+                <div class="col-xs-12">
+                    <label class="col-md-3 control-label">Category:</label>
+                    <div class="col-md-9 dot-box" ng-if="ad.categoryName">{{ad.categoryName}}</div>
+                    <div class="col-md-9 dot-box" ng-if="!ad.categoryName">N/A</div>
+                </div>
+                <div class="col-xs-12">
+                    <label class="col-md-3 control-label">Town:</label>
+                    <div class="col-md-9 dot-box" ng-if="ad.townName">{{ad.townName}}</div>
+                    <div class="col-md-9 dot-box" ng-if="!ad.townName">N/A</div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-12">
+            <div class="col-xs-offset-2 col-xs-4 text-right">
+                <input type="button" value="Delete" ng-click="deleteAd(adId)" />
+            </div>
+            <div class="col-xs-6 text-left">
+                <input type="reset" value="Cancel" ng-click="backToMyAds()" />
+            </div>
+        </div>
+    </div>
+</div>

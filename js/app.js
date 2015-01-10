@@ -31,6 +31,11 @@ app.config(['$routeProvider', function($routeProvider) {
             controller: 'PublishAdController'
         });
 
+        $routeProvider.when('/user/ads/delete/:id', {
+            templateUrl: '/templates/user/deletead.html',
+            controller: 'DeleteAdController'
+        });
+
         $routeProvider.when('/logout', {
             templateUrl: '/templates/home.html',
             controller: 'LogoutController'
