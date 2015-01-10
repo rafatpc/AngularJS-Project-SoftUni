@@ -2,9 +2,10 @@
 
 app.controller('LogoutController', [
     '$location', 'userService', '$scope',
-    function($location, userService, $scope) {
-        $scope.pageTitle = 'Logout';
-        userService.logout();
-        $location.path('/login');
+    function($rootScope, userService, $scope) {
+        $rootScope.pageTitle = 'Logout';
+        userService.logout().$promise.then(function() {
+            window.location = '#/home';
+        });
     }
 ]);

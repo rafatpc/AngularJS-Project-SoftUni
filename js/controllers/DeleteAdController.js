@@ -1,12 +1,10 @@
 'use strict';
 
-app.controller('DeleteAdController', function($scope, $http, userAdsService, authenticationService, $routeParams, $location) {
+app.controller('DeleteAdController', function($scope, $http, userAdsService, authenticationService, $routeParams, $location, $rootScope) {
     $http.defaults.headers.common['Authorization'] = authenticationService.authToken();
-    
-    var adInfo = userAdsService.getById($routeParams.id);
-    
-    $scope.pageTitle = 'Delete Ad';
-    $scope.ad = adInfo;
+
+    $rootScope.pageTitle = 'Delete Ad';
+    $scope.ad = userAdsService.getById($routeParams.id);
     
     $scope.deleteAd = function(id) {
         userAdsService.delete(id);

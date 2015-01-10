@@ -1,5 +1,5 @@
-app.controller('RegisterController', ['$scope', 'userService', 'townsService', function($scope, userService, townsService) {
-        $scope.pageTitle = 'Registration';
+app.controller('RegisterController', ['$scope', 'userService', 'townsService', '$rootScope', function($scope, userService, townsService, $rootScope) {
+        $rootScope.pageTitle = 'Registration';
 
         townsService.getAll().$promise.then(function(data) {
             $scope.towns = data;

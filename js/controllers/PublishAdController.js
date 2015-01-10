@@ -1,11 +1,11 @@
 'use strict';
 
 app.controller('PublishAdController', [
-    '$scope', 'categoriesService', 'townsService', 'userAdsService', 'authenticationService', '$http',
-    function($scope, categoriesService, townsService, userAdsService, authenticationService, $http) {
+    '$scope', 'categoriesService', 'townsService', 'userAdsService', 'authenticationService', '$http', '$rootScope',
+    function($scope, categoriesService, townsService, userAdsService, authenticationService, $http, $rootScope) {
         $http.defaults.headers.common['Authorization'] = authenticationService.authToken();
 
-        $scope.pageTitle = 'Publish New Ad';
+        $rootScope.pageTitle = 'Publish New Ad';
 
         categoriesService.getAll().$promise.then(function(data) {
             $scope.categories = data;

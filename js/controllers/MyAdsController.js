@@ -1,9 +1,9 @@
 'use strict';
 
-app.controller('MyAdsController', function($scope, $http, userAdsService, authenticationService, $location) {
+app.controller('MyAdsController', function($scope, $http, userAdsService, authenticationService, $location, $rootScope) {
     $http.defaults.headers.common['Authorization'] = authenticationService.authToken();
 
-    $scope.pageTitle = 'My Ads';
+    $rootScope.pageTitle = 'My Ads';
 
     $scope.publishAgain = function(id) {
         userAdsService.republish(id);
