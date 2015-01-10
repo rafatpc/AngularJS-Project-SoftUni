@@ -156,3 +156,27 @@ button, input[type="button"], input[type="submit"], .button {
 .last-column {
     padding-right: 0px !important;
 }
+
+.nopadding {
+    padding: 0px !important;
+}
+
+.nopadding-l {
+    padding-left: 0px !important;
+}
+
+#login-box > form > fieldset > div {
+    margin-bottom: 10px;
+}
+
+.nomargin {
+    margin: 0px !important;
+}
+
+.margin-b {
+    margin-bottom: 10px !important;
+}
+
+.fuck-bootstrap {
+    margin: 0px -12px 0px 12px !important;
+}
