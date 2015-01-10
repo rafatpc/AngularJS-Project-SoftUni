@@ -1,9 +1,9 @@
 'use strict';
 
-app.controller('HomeController', function($scope, $http, adsService, authenticationService) {
+app.controller('MyAdsController', function($scope, $http, userAdsService, authenticationService) {
     $http.defaults.headers.common['Authorization'] = authenticationService.authToken();
 
-    adsService.getAds().$promise.then(function(data) {
+    userAdsService.getUserAds().$promise.then(function(data) {
         $scope.ads = data;
     }, function(error) {
         console.log(error);

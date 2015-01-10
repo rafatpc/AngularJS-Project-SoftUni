@@ -1,3 +1,5 @@
+'use strict';
+
 app.factory('authenticationService', function() {
     function saveUserData(data) {
         localStorage.setItem('user', angular.toJson(data));
@@ -18,6 +20,10 @@ app.factory('authenticationService', function() {
         return headers;
     }
 
+    function getAuthToken() {
+        return 'Bearer ' + getUserData().access_token;
+    }
+
     function removeUser() {
         localStorage.removeItem('user');
     }
@@ -26,6 +32,7 @@ app.factory('authenticationService', function() {
         saveUser: saveUserData,
         getUser: getUserData,
         getHeaders: getHeaders,
-        removeUser: removeUser
+        removeUser: removeUser,
+        authToken: getAuthToken
     };
 });

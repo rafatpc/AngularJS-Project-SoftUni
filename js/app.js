@@ -11,6 +11,11 @@ app.config(['$routeProvider', function($routeProvider) {
             controller: 'HomeController'
         });
 
+        $routeProvider.when('/user/ads', {
+            templateUrl: '/templates/home.html',
+            controller: 'MyAdsController'
+        });
+
         $routeProvider.when('/login', {
             templateUrl: '/templates/login.html',
             controller: 'LoginController'
@@ -26,6 +31,11 @@ app.config(['$routeProvider', function($routeProvider) {
             controller: 'BlankController'
         });
 
+        $routeProvider.when('/logout', {
+            templateUrl: '/templates/user/newad.html',
+            controller: 'BlankController'
+        });
+        
         $routeProvider.otherwise({
             redirectTo: '/'
         });
