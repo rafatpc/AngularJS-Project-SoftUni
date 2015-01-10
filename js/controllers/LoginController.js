@@ -1,7 +1,9 @@
-app.controller('LoginController', ['$scope', 'userService', 'authenticationService',
-    function($scope, userService, authenticationService) {
+'use strict';
+
+app.controller('LoginController', ['$scope', 'userService', '$location', function($scope, userService, $location) {
         $scope.login = function(user) {
             userService.login(user);
+            $location.path('/home');
         };
     }
 ]);

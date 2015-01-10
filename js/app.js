@@ -32,8 +32,8 @@ app.config(['$routeProvider', function($routeProvider) {
         });
 
         $routeProvider.when('/logout', {
-            templateUrl: '/templates/user/newad.html',
-            controller: 'BlankController'
+            templateUrl: '/templates/home.html',
+            controller: 'LogoutController'
         });
         
         $routeProvider.otherwise({

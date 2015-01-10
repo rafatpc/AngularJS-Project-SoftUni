@@ -16,9 +16,16 @@ app.factory('userService', ['$resource', 'baseServiceUrl', 'authenticationServic
             });
         }
 
+        function logoutUser() {
+            return $resource(baseServiceUrl + 'user/logout').save().$promise.then(function(data) {
+                authenticationService.removeUser();
+            });
+        }
+
         return {
             register: registerUser,
-            login: loginUser
+            login: loginUser,
+            logout: logoutUser
         };
     }
 ]);

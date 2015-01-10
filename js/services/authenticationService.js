@@ -6,7 +6,13 @@ app.factory('authenticationService', function() {
     }
 
     function getUserData() {
-        return angular.fromJson(localStorage.getItem('user'));
+        var userData = localStorage.getItem('user');
+
+        if (userData) {
+            return angular.fromJson(userData);
+        }
+
+        return null;
     }
 
     function getHeaders() {
@@ -14,18 +20,24 @@ app.factory('authenticationService', function() {
         var userData = getUserData();
 
         if (userData) {
-            headers.Authorization = 'Bearer ' + getUserData().access_token;
+            headers.Authorization = 'Bearer ' + userData.access_token;
         }
 
         return headers;
     }
 
     function getAuthToken() {
-        return 'Bearer ' + getUserData().access_token;
+        var userData = getUserData();
+
+        if (userData) {
+            return 'Bearer ' + userData.access_token;
+        }
+
+        return null;
     }
 
     function removeUser() {
-        localStorage.removeItem('user');
+        return localStorage.removeItem('user');
     }
 
     return {
