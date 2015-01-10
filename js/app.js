@@ -11,9 +11,9 @@ app.config(['$routeProvider', function($routeProvider) {
             controller: 'HomeController'
         });
 
-        $routeProvider.when('/user/ads', {
-            templateUrl: '/templates/user/myads.html',
-            controller: 'MyAdsController'
+        $routeProvider.when('/register', {
+            templateUrl: '/templates/register.html',
+            controller: 'RegisterController'
         });
 
         $routeProvider.when('/login', {
@@ -21,9 +21,9 @@ app.config(['$routeProvider', function($routeProvider) {
             controller: 'LoginController'
         });
 
-        $routeProvider.when('/register', {
-            templateUrl: '/templates/register.html',
-            controller: 'RegisterController'
+        $routeProvider.when('/user/ads', {
+            templateUrl: '/templates/user/myads.html',
+            controller: 'MyAdsController'
         });
 
         $routeProvider.when('/user/ads/publish', {
@@ -36,11 +36,16 @@ app.config(['$routeProvider', function($routeProvider) {
             controller: 'DeleteAdController'
         });
 
+        $routeProvider.when('/user/profile', {
+            templateUrl: '/templates/user/profile.html',
+            controller: 'ProfileController'
+        });
+
         $routeProvider.when('/logout', {
             templateUrl: '/templates/home.html',
             controller: 'LogoutController'
         });
-        
+
         $routeProvider.otherwise({
             redirectTo: '/'
         });

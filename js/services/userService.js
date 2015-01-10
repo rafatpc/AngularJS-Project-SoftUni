@@ -13,12 +13,14 @@ app.factory('userService', ['$resource', 'baseServiceUrl', 'authenticationServic
         function loginUser(user) {
             return $resource(baseServiceUrl + 'user/login').save(user).$promise.then(function(data) {
                 authenticationService.saveUser(data);
+                window.location = '/';
             });
         }
 
         function logoutUser() {
             return $resource(baseServiceUrl + 'user/logout').save().$promise.then(function(data) {
                 authenticationService.removeUser();
+                window.location = '/';
             });
         }
 
