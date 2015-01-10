@@ -7,7 +7,7 @@ app.directive('sidebar', ['authenticationService', function(authenticationServic
 
         return {
             restrict: 'E',
-            controller: 'HomeController',
+            controller: null,
             templateUrl: 'templates/main/' + sidebar + '.html',
             replace: true
         };

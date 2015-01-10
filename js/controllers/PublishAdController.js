@@ -5,6 +5,8 @@ app.controller('PublishAdController', [
     function($scope, categoriesService, townsService, userAdsService, authenticationService, $http) {
         $http.defaults.headers.common['Authorization'] = authenticationService.authToken();
 
+        $scope.pageTitle = 'Publish New Ad';
+
         categoriesService.getAll().$promise.then(function(data) {
             $scope.categories = data;
         }, function(error) {
