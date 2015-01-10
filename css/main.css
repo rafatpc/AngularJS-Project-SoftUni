@@ -2,6 +2,10 @@
     font-family: "Roboto", Arial, serif !important;
 }
 
+img {
+    max-width: 150px !important;
+}
+
 body {
     background-color: #d1ffb6 !important;
 }

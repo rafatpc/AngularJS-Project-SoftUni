@@ -1,6 +1,6 @@
 'use strict';
 
-app.factory('townsService', ['$resource', 'baseServiceUrl', '$http', function($resource, baseServiceUrl, $http) {
+app.factory('townsService', ['$resource', 'baseServiceUrl', function($resource, baseServiceUrl) {
         var resource = $resource(baseServiceUrl + 'towns');
         
         function getAllTowns() {
@@ -8,7 +8,7 @@ app.factory('townsService', ['$resource', 'baseServiceUrl', '$http', function($r
         }
 
         return {
-            getTowns: getAllTowns
+            getAll: getAllTowns
         };
     }
 ]);

@@ -28,7 +28,7 @@ app.config(['$routeProvider', function($routeProvider) {
 
         $routeProvider.when('/user/ads/publish', {
             templateUrl: '/templates/user/newad.html',
-            controller: 'BlankController'
+            controller: 'PublishAdController'
         });
 
         $routeProvider.when('/logout', {
