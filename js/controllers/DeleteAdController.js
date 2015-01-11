@@ -3,10 +3,13 @@
 app.controller('DeleteAdController', function($scope, $http, userAdsService, authenticationService, $routeParams, $location, $rootScope) {
     $http.defaults.headers.common['Authorization'] = authenticationService.authToken();
 
+    var adId = $routeParams.id;
+
     $rootScope.pageTitle = 'Delete Ad';
-    $scope.ad = userAdsService.getById($routeParams.id);
-    
-    $scope.deleteAd = function(id) {
+    $scope.ad = userAdsService.getById(adId);
+
+    $scope.deleteAd = function() {
+        var id = $routeParams.id;
         userAdsService.delete(id);
         $location.path('/user/ads');
     };
