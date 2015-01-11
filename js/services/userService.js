@@ -6,6 +6,7 @@ app.factory('userService', ['$resource', 'baseServiceUrl', 'authenticationServic
             return $resource(baseServiceUrl + 'user/register').save(user).$promise.then(function(data) {
                 authenticationService.saveUser(data);
             }, function(error) {
+                alert('Грешка: Виж конзолата :D');
                 console.log(error.data.modelState);
             });
         }
@@ -14,6 +15,8 @@ app.factory('userService', ['$resource', 'baseServiceUrl', 'authenticationServic
             return $resource(baseServiceUrl + 'user/login').save(user).$promise.then(function(data) {
                 authenticationService.saveUser(data);
                 window.location = '/';
+            }, function() {
+                alert('Сори, грешно име/парола.');
             });
         }
 
