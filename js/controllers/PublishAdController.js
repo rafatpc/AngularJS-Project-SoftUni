@@ -6,7 +6,8 @@ app.controller('PublishAdController', [
         $http.defaults.headers.common['Authorization'] = authenticationService.authToken();
 
         $rootScope.pageTitle = 'Publish New Ad';
-
+        $scope.ad = {};
+        
         categoriesService.getAll().$promise.then(function(data) {
             $scope.categories = data;
         }, function(error) {
@@ -20,7 +21,10 @@ app.controller('PublishAdController', [
         });
 
         $scope.fileSelected = function(fileInputField) {
-            delete $scope.ad.imageDataUrl;
+            if ($scope.ad) {
+                delete $scope.ad.imageDataUrl;
+            }
+
             var file = fileInputField.files[0];
 
             if (file.type.match(/image\/.*/)) {
